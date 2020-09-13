@@ -21,6 +21,6 @@ SQL_SERVER="changeme.database.windows.net" \
 SQL_DBNAME="mydrivingDB"
 
 # Add the application's jar to the container
-COPY --from=build-env target/{APP_NAME}-1.0-SNAPSHOT.jar user-java.jar
+COPY --from=build-env target/${APP_NAME}-1.0-SNAPSHOT.jar user-java.jar
 
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/user-java.jar"]
