@@ -1,6 +1,3 @@
-ARG BUILD_FOLDER=TEST
-ARG APP_NAME=my-app
-
 # First stage to build the application
 FROM maven:3.5.4-jdk-10-slim AS build-env
 # ADD ../${BUILD_FOLDER}/pom.xml pom.xml
@@ -12,6 +9,7 @@ RUN mvn clean package
 
 # build runtime image
 FROM openjdk:10-jre-slim
+ARG APP_NAME=my-app
 
 EXPOSE 8080
 
