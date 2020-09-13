@@ -1,0 +1,3 @@
+[submodule "submodule-shared-build-script"]
+	path = submodule-shared-build-script
+	url = https://github.com/maniSbindra/submodule-shared-build-script.git

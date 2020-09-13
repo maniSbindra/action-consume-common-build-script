@@ -24,12 +24,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
+        with:
+            submodules: true
 
       - name: Run Tests and Build Image
         run: |
           cd javaapp
-          docker build --tag $IMAGE_NAME --build-arg APP_NAME=my-app --file ../common-build-files/Dockerfile .
+          docker build --tag $IMAGE_NAME --build-arg APP_NAME=my-app --file ../submodule-shared-build-script/Dockerfile .
           
 
 #   # Push image to GitHub Packages.
